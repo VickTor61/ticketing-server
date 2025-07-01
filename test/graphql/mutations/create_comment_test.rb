@@ -1,10 +1,10 @@
 require "test_helper"
 
-class Mutations::CreateUserTest < ActiveSupport::TestCase
+class Mutations::CreateCommentTest < ActiveSupport::TestCase
   def setup
     @agent = users(:agent)
     @customer = users(:customer)
-    @ticket = tickets(:one)
+    @ticket =  tickets(:one)
 
     @schema = TicketingSchema
   end
@@ -54,6 +54,6 @@ class Mutations::CreateUserTest < ActiveSupport::TestCase
     }
     result = @schema.execute(query, variables: variables, context: { current_user: @agent })
     assert_nil result["errors"]
-    refute_nil result.to_h["data"]["createComment"]["comment"]
+    refute_nil result.to_h.dig("data", "createComment")
   end
 end

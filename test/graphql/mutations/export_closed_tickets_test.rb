@@ -22,7 +22,6 @@ class Mutations::ExportClosedTicketsTest < ActiveSupport::TestCase
 
 
     result = @schema.execute(query,  context: { current_user: @agent })
-    binding.irb
     assert_nil result["errors"]
     closed_tickets = result.to_h.dig("data", "closedTickets")
     refute_nil closed_tickets
