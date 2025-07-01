@@ -1,5 +1,4 @@
 require "test_helper"
-
 class Mutations::LogoutTest < ActiveSupport::TestCase
 
   def setup
@@ -19,12 +18,12 @@ class Mutations::LogoutTest < ActiveSupport::TestCase
       }
     GQL
 
-    result = @schema.execute(query, context: { current_user: @customer })
-    binding.irb
+    old_jti = @customer.jti
+    result = @schema.execute(query, context: { current_user: @customer, controller: @customer })
     assert_nil result["errors"]
-    # Add assertions based on what your logout mutation returns
-    # For example:
-    # assert result.dig("data", "logout") == true
+    assert result.dig("data", "logout") == true
+    @customer.reload
+    assert_not_equal old_jti, @customer.jti
   end
 
 end
