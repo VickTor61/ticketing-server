@@ -53,7 +53,7 @@ module Types
       user = context[:current_user]
       return [] unless user
 
-      ::Comment.where(ticket_id: ticket_id).order(created_at: :desc)
+      ::Comment.where(ticket_id: ticket_id)
     end
   end
 end

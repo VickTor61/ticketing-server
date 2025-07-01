@@ -10,7 +10,7 @@ class Ticket < ApplicationRecord
   scope :closed_last_month, -> { where(status: :closed, closed_at: 1.month.ago .. Time.current) }
 
   def customer_can_comment?
-    comments.joins(:user).where(users: { role: "agent" }).exists?
+    comments.joins(:user).where(users: { role: User.roles[:agent] }).exists?
   end
 
   def close!

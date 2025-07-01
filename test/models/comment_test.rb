@@ -5,6 +5,9 @@ class CommentTest < ActiveSupport::TestCase
     @agent = users(:agent)
     @customer = users(:customer)
     @ticket = tickets(:one)
+    @ticket.comments.delete_all
+    @ticket.reload
+    @ticket.association(:comments).reset
   end
 
   test "should be valid with content, user, and ticket" do

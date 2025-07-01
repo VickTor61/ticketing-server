@@ -2,10 +2,10 @@
 
 first:
   user: agent
-  ticket: two
+  ticket: one
   content: MyString
 
 second:
   user: customer
-  ticket: two
+  ticket: one
   content: MyString

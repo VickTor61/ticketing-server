@@ -59,7 +59,7 @@ class TicketTest < ActiveSupport::TestCase
   end
 
   test "#customer_can_comment? should be false if no agent has commented" do
-    ticket = tickets(:one)
-    assert_not ticket.customer_can_comment?
+    new_ticket = Ticket.create!(title: "New Ticket", description: "Description", customer: @customer)
+    assert_not new_ticket.customer_can_comment?
   end
 end
