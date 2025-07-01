@@ -92,7 +92,7 @@ production:
     <<: *default
     database: ticketing_production
     username: ticketing
-    password: <%= ENV["RAILS_GRAPHQL_DATABASE_PASSWORD"] %>
+    password: <%= ENV["TICKETING_DATABASE_PASSWORD"] %>
   cache:
     <<: *primary_production
     database: ticketing_production_cache
