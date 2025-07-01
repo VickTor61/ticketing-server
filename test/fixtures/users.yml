@@ -4,8 +4,10 @@ customer:
   first_name: john
   last_name: doe
   email: customer@test.com
+  role: customer
 
 agent:
   first_name: sebastian
   last_name: haller
   email: agent@test.com
+  role: agent

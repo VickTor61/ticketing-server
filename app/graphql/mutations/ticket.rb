@@ -19,7 +19,7 @@ module Mutations
       { ticket: ticket }
 
     rescue ActiveRecord::RecordInvalid => e
-      raise GraphQL::ExecutionError, "Invalid ticket params"
+      raise GraphQL::ExecutionError, "Error creating ticket"
     rescue StandardError => e
       raise GraphQL::ExecutionError, "#{e.message}"
     end
