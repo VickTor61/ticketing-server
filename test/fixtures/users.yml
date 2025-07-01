@@ -11,3 +11,9 @@ agent:
   last_name: haller
   email: agent@test.com
   role: agent
+
+agent_two:
+  first_name: jane
+  last_name: doe
+  email: agent_two@test.com
+  role: agent
