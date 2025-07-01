@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+first:
+  user: agent
+  ticket: one
+  content: MyString
+
+second:
+  user: customer
+  ticket: two
+  content: MyString

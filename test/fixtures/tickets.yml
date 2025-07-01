@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Ticket 1
+  description: MyText
+  priority: low
+  status: open
+  customer: customer
+
+two:
+  title: Ticket 2
+  description: MyText
+  priority: high
+  status: in_progress
+  customer: customer

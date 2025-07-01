@@ -1,0 +1,10 @@
+shared: &shared
+  daily_reminder:
+    class: DailyReminderJob
+    schedule: "0 9 * * *"  # Every day at 9:00am
+
+development:
+  <<: *shared
+
+production:
+  <<: *shared
