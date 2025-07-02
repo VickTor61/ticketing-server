@@ -90,7 +90,7 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    url: <%= ENV['TICKETING_PRODUCTION_DATABASE_URL'] %>
+    url: <%= ENV['DATABASE_URL'] %>
   cache:
     <<: *primary_production
     database: ticketing_production_cache
