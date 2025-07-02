@@ -90,9 +90,7 @@ test:
 production:
   primary: &primary_production
     <<: *default
-    database: ticketing_production
-    username: ticketing
-    password: <%= ENV["TICKETING_DATABASE_PASSWORD"] %>
+    url: <%= ENV['TICKETING_PRODUCTION_DATABASE_URL'] %>
   cache:
     <<: *primary_production
     database: ticketing_production_cache
