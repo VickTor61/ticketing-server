@@ -93,13 +93,13 @@ production:
     url: <%= ENV['DATABASE_URL'] %>
   cache:
     <<: *primary_production
-    database: ticketing_production_cache
+    schema_search_path: cache,public
     migrations_paths: db/cache_migrate
   queue:
     <<: *primary_production
-    database: ticketing_production_queue
+    schema_search_path: queue,public
     migrations_paths: db/queue_migrate
   cable:
     <<: *primary_production
-    database: ticketing_production_cable
+    schema_search_path: cable,public
     migrations_paths: db/cable_migrate

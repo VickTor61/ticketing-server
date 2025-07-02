@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: ticketing-api
+    env: ruby
+    buildCommand: "./bin/render-build.sh"
+    startCommand: "bundle exec puma -C config/puma.rb"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: ticketing-db
+          property: connectionString
+      - key: TICKETING_DATABASE_PASSWORD
+        sync: false
+      - key: RAILS_MASTER_KEY
+        sync: false
+      - key: RAILS_ENV
+        value: production
+
+databases:
+  - name: ticketing-db
+    databaseName: ticketing_production
+    user: ticketing
