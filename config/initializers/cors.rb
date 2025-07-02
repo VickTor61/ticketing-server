@@ -7,7 +7,17 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins "http://localhost:3000", "http://127.0.0.1:3000"
+    origins case Rails.env
+            when "development"
+              %w[http://localhost:3000 http://127.0.0.1:3000]
+            when "production"
+              [
+                ENV["FRONTEND_URL"] || "https://ticketing-client-qlwf.onrender.com",
+                "https://ticketing-client-qlwf.onrender.com"
+              ]
+            else
+              []
+            end
 
     resource "*",
              headers: :any,
