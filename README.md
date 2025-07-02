@@ -2,25 +2,33 @@
 Ticket platform
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This README documents the necessary steps to get the application up and running locally.
 
-Things you may want to cover:
+### Ruby version
+- ruby-3.3.4
 
-* Ruby version
+### System dependencies
+- PostgreSQL
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+### Getting Started
+1. **Clone the repository:**
+   ```bash
+   git clone git@github.com:VickTor61/ticketing-server.git
+   ```
+2. **Install dependencies**
+   ```bash
+   bundle install
+   ```
+3. **Create and migrate the database:**
+   ```bash
+   rails db:create
+   rails db:migrate
+   ```
+4. **Run the test suite**
+   ```bash
+   rails test
+   ```
+5. **Start the server**
+   ```bash
+   rails s
+   ```
